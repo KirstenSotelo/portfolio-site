@@ -33,6 +33,12 @@ const portfolioData: PortfolioData = {
       year: "2025",
       description: "",
       icon: "/creation-technologies.png"
+    },
+    {
+      title: "SWE @ Riipen",
+      year: "2025",
+      description: "",
+      icon: "/riipen.png"
     }
   ],
   projects: [
