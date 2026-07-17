@@ -32,7 +32,7 @@ const portfolioData: PortfolioData = {
       title: "Data @ Creation Technologies",
       year: "2025",
       description: "",
-      icon: "/creation_technologies.png"
+      icon: "/creation-technologies.png"
     },
     {
       title: "Developer @ Riipen",
