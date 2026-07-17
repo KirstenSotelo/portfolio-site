@@ -5,11 +5,132 @@
 }
 
 body {
-    background-color: #0a0a0a;
+    background-color: #050509;
     color: #e0e0e0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
+}
+
+/* Animated spotlight background */
+.spotlight-container {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.spotlight-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.spotlight-content {
+    position: relative;
+    z-index: 1;
+}
+
+.spotlight {
+    position: absolute;
+    width: 65vw;
+    height: 65vw;
+    min-width: 500px;
+    min-height: 500px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.35;
+    will-change: transform;
+}
+
+.spotlight-left {
+    top: -35%;
+    left: -25%;
+    background: radial-gradient(
+        circle,
+        rgba(56, 189, 248, 0.8) 0%,
+        rgba(59, 130, 246, 0.35) 40%,
+        transparent 70%
+    );
+    animation: move-left-spotlight 12s ease-in-out infinite;
+}
+
+.spotlight-mid {
+    top: 5%;
+    left: 25%;
+    background: radial-gradient(
+        circle,
+        rgba(139, 92, 246, 0.7) 0%,
+        rgba(99, 102, 241, 0.3) 40%,
+        transparent 70%
+    );
+    animation: move-mid-spotlight 15s ease-in-out 3s infinite;
+}
+
+.spotlight-right {
+    top: -15%;
+    right: -30%;
+    background: radial-gradient(
+        circle,
+        rgba(236, 72, 153, 0.55) 0%,
+        rgba(139, 92, 246, 0.25) 40%,
+        transparent 70%
+    );
+    animation: move-right-spotlight 18s ease-in-out 5s infinite;
+}
+
+@keyframes move-left-spotlight {
+    0%,
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(-30%, -70%) rotate(15deg);
+    }
+
+    66% {
+        transform: translate(-70%, -30%) rotate(-15deg);
+    }
+}
+
+@keyframes move-mid-spotlight {
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(-20deg);
+    }
+
+    33% {
+        transform: translate(20%, 30%) rotate(0deg);
+    }
+
+    66% {
+        transform: translate(-20%, 10%) rotate(20deg);
+    }
+}
+
+@keyframes move-right-spotlight {
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(10deg);
+    }
+
+    33% {
+        transform: translate(-30%, -20%) rotate(-10deg);
+    }
+
+    66% {
+        transform: translate(10%, 20%) rotate(25deg);
+    }
+}
+
+/* Accessibility: stop animations when reduced motion is enabled */
+@media (prefers-reduced-motion: reduce) {
+    .spotlight {
+        animation: none;
+    }
 }
 
 #app {
