@@ -35,7 +35,7 @@ const portfolioData: PortfolioData = {
       icon: "/creation-technologies.png"
     },
     {
-      title: "Developer @ Riipen",
+      title: "Dev @ Riipen",
       year: "2025",
       description: "",
       icon: "/riipen.png"
