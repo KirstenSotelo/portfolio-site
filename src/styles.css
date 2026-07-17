@@ -135,8 +135,13 @@ body {
 
 #app {
     max-width: 600px;
+    min-height: 100vh;
     margin: 0 auto;
-    padding: 40px 24px;
+    padding: 60px 32px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Header */
