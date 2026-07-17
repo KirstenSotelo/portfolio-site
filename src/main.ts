@@ -18,42 +18,36 @@ interface PortfolioData {
 }
 
 const portfolioData: PortfolioData = {
-  name: "Your Name",
-  subtitle: "Location • School Name",
+  name: "kirsten sotelo",
+  subtitle: "CS @ toronto metropolitan university",
   work: [
     {
-      title: "Job Title @ Company",
+      title: "Data @ Sanofi",
       year: "2026",
-      description: "Brief description of your role and responsibilities"
+      description: ""
     },
     {
-      title: "Previous Job @ Previous Company",
+      title: "Data @ Creation Technologies",
       year: "2025",
-      description: "Brief description of your role and responsibilities"
+      description: ""
     }
   ],
   projects: [
     {
-      name: "Project Name",
-      url: "#",
-      description: "Brief description of what this project does or technology used"
+      name: "Orpheus",
+      url: "https://github.com/JulianCruzet/Orpheus",
+      description: "multi-platform agentic e-commerce store management platform"
     },
     {
-      name: "Another Project",
+      name: "TradeLens",
       url: "#",
-      description: "Brief description of what this project does or technology used"
-    },
-    {
-      name: "Third Project",
-      url: "#",
-      description: "Brief description of what this project does or technology used"
+      description: "snowflake agentic platform for admin workflows"
     }
   ],
   links: [
-    { label: "email", url: "mailto:email@example.com" },
-    { label: "linkedin", url: "#" },
-    { label: "github", url: "#" },
-    { label: "twitter", url: "#" }
+    { label: "email", url: "mailto:kirsten.sotelo@gmail.com" },
+    { label: "linkedin", url: "https://www.linkedin.com/in/kirstensotelo/" },
+    { label: "github", url: "https://github.com/KirstenSotelo" }
   ]
 };
 
