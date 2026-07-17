@@ -5,6 +5,7 @@ interface PortfolioData {
     title: string;
     year: string;
     description: string;
+    icon: string;
   }>;
   projects: Array<{
     name: string;
@@ -24,12 +25,14 @@ const portfolioData: PortfolioData = {
     {
       title: "Data @ Sanofi",
       year: "2026",
-      description: ""
+      description: "",
+      icon: "/sanofi.png"
     },
     {
       title: "Data @ Creation Technologies",
       year: "2025",
-      description: ""
+      description: "",
+      icon: "/creation-technologies.png"
     }
   ],
   projects: [
@@ -64,9 +67,22 @@ function createWorkSection(workItems: PortfolioData['work']): HTMLElement {
     const item = document.createElement('div');
     item.className = 'work-item';
 
+    const titleRow = document.createElement('div');
+    titleRow.className = 'job-title-row';
+
+    const logo = document.createElement('img');
+    logo.className = 'job-logo';
+    logo.src = job.icon;
+    logo.alt = '';
+    logo.setAttribute('aria-hidden', 'true');
+    logo.loading = 'lazy';
+
     const jobTitle = document.createElement('h3');
     jobTitle.className = 'job-title';
     jobTitle.textContent = job.title;
+
+    titleRow.appendChild(logo);
+    titleRow.appendChild(jobTitle);
 
     const jobYear = document.createElement('p');
     jobYear.className = 'job-description';
@@ -76,7 +92,7 @@ function createWorkSection(workItems: PortfolioData['work']): HTMLElement {
     jobDetails.className = 'job-details';
     jobDetails.textContent = job.description;
 
-    item.appendChild(jobTitle);
+    item.appendChild(titleRow);
     item.appendChild(jobYear);
     item.appendChild(jobDetails);
     section.appendChild(item);
