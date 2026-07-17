@@ -175,11 +175,27 @@ body {
     margin-bottom: 18px;
 }
 
+.job-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.job-logo {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding: 2px;
+}
+
 .job-title {
     font-size: 16px;
     font-weight: 600;
     color: #ffffff;
-    margin-bottom: 4px;
 }
 
 .job-description {
