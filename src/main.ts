@@ -30,6 +30,11 @@ const portfolioData: PortfolioData = {
       title: "Data @ Creation Technologies",
       year: "2025",
       description: ""
+    },
+    {
+      title: "UX/UI @ Riipen",
+      year: "2025",
+      description: ""
     }
   ],
   projects: [
