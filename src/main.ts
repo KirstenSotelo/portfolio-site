@@ -54,10 +54,10 @@ const portfolioData: PortfolioData = {
     }
   ],
   links: [
-    { label: "email", url: "mailto:kirsten.sotelo@gmail.com" },
-    { label: "linkedin", url: "https://www.linkedin.com/in/kirstensotelo/" },
-    { label: "github", url: "https://github.com/KirstenSotelo" }
-  ]
+  { label: "email", url: "mailto:kirsten.sotelo@gmail.com" },
+  { label: "linkedin", url: "https://www.linkedin.com/in/kirstensotelo/" },
+  { label: "github", url: "https://github.com/KirstenSotelo" }
+]
 };
 
 function createWorkSection(workItems: PortfolioData['work']): HTMLElement {
@@ -123,6 +123,8 @@ function createProjectsSection(projectItems: PortfolioData['projects']): HTMLEle
     const link = document.createElement('a');
     link.className = 'project-link';
     link.href = project.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
     link.textContent = project.name;
 
     const description = document.createElement('p');
@@ -145,6 +147,8 @@ function createFooter(links: PortfolioData['links']): HTMLElement {
     const a = document.createElement('a');
     a.className = 'link';
     a.href = link.url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
     a.textContent = link.label;
     footer.appendChild(a);
   });
