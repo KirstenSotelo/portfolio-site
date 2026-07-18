@@ -198,15 +198,17 @@ body {
     color: #ffffff;
 }
 
-.job-description {
+.job-year {
     font-size: 13px;
     color: #888888;
-    margin-bottom: 6px;
+    margin-left: auto;
+    font-variant-numeric: tabular-nums;
 }
 
 .job-details {
     font-size: 14px;
     color: #b0b0b0;
+    padding-left: 30px;
 }
 
 /* Projects */
@@ -269,6 +271,10 @@ body {
 
     .section {
         margin-bottom: 28px;
+    }
+
+    .job-details {
+        padding-left: 0;
     }
 
     .footer {

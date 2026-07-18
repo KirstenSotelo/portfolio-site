@@ -25,19 +25,19 @@ const portfolioData: PortfolioData = {
     {
       title: "Data @ Sanofi",
       year: "2026",
-      description: "",
+      description: "sql + snowflake, llm optimization, power bi for ai platform solutions",
       icon: "/sanofi.png"
     },
     {
       title: "Data @ Creation Technologies",
       year: "2025",
-      description: "",
+      description: "python automation, oracle sql, power bi for manufacturing",
       icon: "/creation-technologies.png"
     },
     {
       title: "Dev @ Riipen",
+      description: "react + typescript, node.js + postgresql, full-stack admin portal",
       year: "2025",
-      description: "",
       icon: "/riipen.png"
     }
   ],
@@ -87,19 +87,20 @@ function createWorkSection(workItems: PortfolioData['work']): HTMLElement {
     jobTitle.className = 'job-title';
     jobTitle.textContent = job.title;
 
+    const jobYear = document.createElement('time');
+    jobYear.className = 'job-year';
+    jobYear.dateTime = job.year;
+    jobYear.textContent = job.year;
+
     titleRow.appendChild(logo);
     titleRow.appendChild(jobTitle);
-
-    const jobYear = document.createElement('p');
-    jobYear.className = 'job-description';
-    jobYear.textContent = job.year;
+    titleRow.appendChild(jobYear);
 
     const jobDetails = document.createElement('p');
     jobDetails.className = 'job-details';
     jobDetails.textContent = job.description;
 
     item.appendChild(titleRow);
-    item.appendChild(jobYear);
     item.appendChild(jobDetails);
     section.appendChild(item);
   });
