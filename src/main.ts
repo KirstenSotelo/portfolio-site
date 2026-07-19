@@ -125,21 +125,21 @@ function createProjectsSection(projectItems: PortfolioData['projects']): HTMLEle
   section.appendChild(title);
 
   projectItems.forEach(project => {
-    const item = document.createElement('div');
+    const item = document.createElement('a');
     item.className = 'project-item';
+    item.href = project.url;
+    item.target = '_blank';
+    item.rel = 'noopener noreferrer';
 
-    const link = document.createElement('a');
-    link.className = 'project-link';
-    link.href = project.url;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.textContent = project.name;
+    const projectName = document.createElement('h3');
+    projectName.className = 'project-link';
+    projectName.textContent = project.name;
 
     const description = document.createElement('p');
     description.className = 'project-description';
     description.textContent = project.description;
 
-    item.appendChild(link);
+    item.appendChild(projectName);
     item.appendChild(description);
     section.appendChild(item);
   });
