@@ -20,7 +20,7 @@ interface PortfolioData {
 
 const portfolioData: PortfolioData = {
   name: "kirsten sotelo",
-  subtitle: "CS @ toronto metropolitan university",
+  subtitle: "cs @ toronto metropolitan university",
   work: [
     {
       title: "Data @ Sanofi",
