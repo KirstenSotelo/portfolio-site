@@ -330,15 +330,15 @@ body {
     font-weight: 600;
     margin-bottom: 6px;
     color: #ffffff;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header:hover .name {
     background: linear-gradient(90deg, #06b6d4, #a855f7, #06b6d4);
     background-size: 200% auto;
     -webkit-background-clip: text;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
     animation: gradient-shift 3s linear infinite;
 }
 
@@ -555,9 +555,10 @@ body {
     font-size: 14px;
     color: #888888;
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     display: inline-block;
+    transform-origin: center;
 }
 
 .link::after {
@@ -570,13 +571,14 @@ body {
     background: linear-gradient(90deg, #38bdf8, #8b5cf6, #ec4899);
     transform: translateX(-50%);
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
 }
 
 .link:hover {
     color: #ffffff;
     transform: scale(1.05);
     text-shadow: 0 0 4px rgba(139, 92, 246, 0.04);
-}}}
+}
 
 .link:hover::after {
     width: 100%;
