@@ -6,7 +6,7 @@ interface PortfolioData {
     year: string;
     description: string;
     icon: string;
-    url?: string;
+    url: string;
   }>;
   projects: Array<{
     name: string;
@@ -28,21 +28,21 @@ const portfolioData: PortfolioData = {
       year: "2026",
       description: "sql + snowflake, llm optimization, power bi for ai platform solutions",
       icon: "/sanofi.png",
-      url: ""
+      url: "https://www.sanofi.com/en"
     },
     {
       title: "Data @ Creation Technologies",
       year: "2025",
       description: "python automation, oracle sql, power bi for manufacturing",
       icon: "/creation-technologies.png",
-      url: ""
+      url: "https://www.creationtech.com/"
     },
     {
       title: "Dev @ Riipen",
       description: "react + typescript, node.js + postgresql, full-stack admin portal",
       year: "2025",
       icon: "/riipen.png",
-      url: ""
+      url: "https://www.riipen.com/"
     }
   ],
   projects: [
@@ -53,7 +53,7 @@ const portfolioData: PortfolioData = {
     },
     {
       name: "TradeLens",
-      url: "#",
+      url: "https://www.linkedin.com/posts/maxence-donio-b20184120_just-wrapped-the-sanofi-x-snowflake-ai-hackathon-ugcPost-7465456899753377792-qqav/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ84wUBuIC2UQZmGFetR9bhXyxsc8EEk9M",
       description: "snowflake agentic platform for admin workflows"
     }
   ],
@@ -74,14 +74,11 @@ function createWorkSection(workItems: PortfolioData['work']): HTMLElement {
   section.appendChild(title);
 
   workItems.forEach(job => {
-    const itemContainer = job.url ? document.createElement('a') : document.createElement('div');
+    const itemContainer = document.createElement('a');
     itemContainer.className = 'work-item';
-    
-    if (job.url) {
-      (itemContainer as HTMLAnchorElement).href = job.url;
-      (itemContainer as HTMLAnchorElement).target = '_blank';
-      (itemContainer as HTMLAnchorElement).rel = 'noopener noreferrer';
-    }
+    itemContainer.href = job.url;
+    itemContainer.target = '_blank';
+    itemContainer.rel = 'noopener noreferrer';
 
     const titleRow = document.createElement('div');
     titleRow.className = 'job-title-row';
