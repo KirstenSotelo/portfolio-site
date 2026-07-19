@@ -1,3 +1,5 @@
+import './styles.css';
+
 interface PortfolioData {
   name: string;
   subtitle: string;
@@ -193,8 +195,6 @@ function initializePortfolio(): void {
   // Footer
   container.appendChild(createFooter(portfolioData.links));
 }
-
-import './styles.css';
 
 function initializeCursorFollower(): void {
   const trailContainer = document.createElement('div');
