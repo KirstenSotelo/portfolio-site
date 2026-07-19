@@ -189,4 +189,88 @@ function initializePortfolio(): void {
 
 import './styles.css';
 
-document.addEventListener('DOMContentLoaded', initializePortfolio);
+function initializeCursorFollower(): void {
+  const trailContainer = document.createElement('div');
+  trailContainer.className = 'cursor-trail-container';
+  document.body.appendChild(trailContainer);
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let lastTrailX = 0;
+  let lastTrailY = 0;
+  let particleCount = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    // Create trail particles at intervals
+    const distance = Math.sqrt(
+      Math.pow(mouseX - lastTrailX, 2) + Math.pow(mouseY - lastTrailY, 2)
+    );
+
+    if (distance > 15) {
+      createTrailParticle(trailContainer, mouseX, mouseY, particleCount);
+      particleCount++;
+      lastTrailX = mouseX;
+      lastTrailY = mouseY;
+    }
+  });
+
+  // Click effect
+  document.addEventListener('click', (e) => {
+    createClickBurst(trailContainer, e.clientX, e.clientY);
+  });
+}
+
+function createTrailParticle(container: HTMLElement, x: number, y: number, index: number): void {
+  const particle = document.createElement('div');
+  particle.className = 'cursor-gradient-circle';
+  
+  // Cycle through 3 different color variants
+  const colorVariant = index % 3;
+  particle.setAttribute('data-color', colorVariant.toString());
+  
+  particle.style.left = x + 'px';
+  particle.style.top = y + 'px';
+
+  container.appendChild(particle);
+
+  // Fade out and remove
+  setTimeout(() => {
+    particle.classList.add('fade-out');
+  }, 100);
+
+  setTimeout(() => {
+    particle.remove();
+  }, 600);
+}
+
+function createClickBurst(container: HTMLElement, x: number, y: number): void {
+  const particleCount = 8;
+  
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'click-burst-particle';
+    particle.setAttribute('data-color', (i % 3).toString());
+    
+    particle.style.left = x + 'px';
+    particle.style.top = y + 'px';
+    
+    // Calculate angle for radial burst
+    const angle = (i / particleCount) * Math.PI * 2;
+    particle.style.setProperty('--angle', angle.toString());
+    
+    container.appendChild(particle);
+
+    // Remove after animation completes
+    setTimeout(() => {
+      particle.remove();
+    }, 600);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initializePortfolio();
+  initializeCursorFollower();
+});
