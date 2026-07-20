@@ -68,7 +68,7 @@ const portfolioData: PortfolioData = {
 
 function createWorkSection(workItems: PortfolioData['work']): HTMLElement {
   const section = document.createElement('section');
-  section.className = 'section';
+  section.className = 'section work-section';
 
   const title = document.createElement('h2');
   title.className = 'section-title';
@@ -119,7 +119,7 @@ function createWorkSection(workItems: PortfolioData['work']): HTMLElement {
 
 function createProjectsSection(projectItems: PortfolioData['projects']): HTMLElement {
   const section = document.createElement('section');
-  section.className = 'section';
+  section.className = 'section projects-section';
 
   const title = document.createElement('h2');
   title.className = 'section-title';
