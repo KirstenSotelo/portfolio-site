@@ -57,6 +57,11 @@ const portfolioData: PortfolioData = {
       name: "TradeLens",
       url: "https://www.linkedin.com/posts/maxence-donio-b20184120_just-wrapped-the-sanofi-x-snowflake-ai-hackathon-ugcPost-7465456899753377792-qqav/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ84wUBuIC2UQZmGFetR9bhXyxsc8EEk9M",
       description: "snowflake agentic platform for admin workflows"
+    },
+    {
+      name: "Immunis",
+      url: "https://github.com/KirstenSotelo/Immunis",
+      description: "cybersecurity system for real-time threat detection and mitigation"
     }
   ],
   links: [
