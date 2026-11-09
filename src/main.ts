@@ -49,6 +49,11 @@ const portfolioData: PortfolioData = {
   ],
   projects: [
     {
+      name: "Whispr",
+      url: "https://github.com/JulianCruzet/whispr",
+      description: "iphone improv game that whispers real-time conversation cues through your headphones"
+    },
+    {
       name: "Orpheus",
       url: "https://github.com/JulianCruzet/Orpheus",
       description: "multi-platform agentic e-commerce store management platform"
