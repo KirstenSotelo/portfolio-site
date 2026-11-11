@@ -12,6 +12,7 @@ interface PortfolioData {
   }>;
   projects: Array<{
     name: string;
+    award: string;
     url: string;
     description: string;
   }>;
@@ -49,22 +50,26 @@ const portfolioData: PortfolioData = {
   ],
   projects: [
     {
-      name: "Whispr",
-      url: "https://github.com/JulianCruzet/whispr",
-      description: "iphone improv game that whispers real-time conversation cues through your headphones"
-    },
-    {
       name: "Orpheus",
+      award: "Google Showcase Winner",
       url: "https://github.com/JulianCruzet/Orpheus",
       description: "multi-platform agentic e-commerce store management platform"
     },
     {
+      name: "Whispr",
+      award: "Hackathon Winner",
+      url: "https://github.com/JulianCruzet/whispr",
+      description: "iphone improv game that whispers real-time conversation cues through your headphones"
+    },
+    {
       name: "TradeLens",
+      award: "Hackathon Winner",
       url: "https://www.linkedin.com/posts/maxence-donio-b20184120_just-wrapped-the-sanofi-x-snowflake-ai-hackathon-ugcPost-7465456899753377792-qqav/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ84wUBuIC2UQZmGFetR9bhXyxsc8EEk9M",
       description: "snowflake agentic platform for admin workflows"
     },
     {
       name: "Immunis",
+      award: "Hack The North Runner-up",
       url: "https://github.com/KirstenSotelo/Immunis",
       description: "cybersecurity system for real-time threat detection and mitigation"
     }
@@ -145,7 +150,7 @@ function createProjectsSection(projectItems: PortfolioData['projects']): HTMLEle
 
     const projectName = document.createElement('h3');
     projectName.className = 'project-link';
-    projectName.textContent = project.name;
+    projectName.textContent = `${project.name} -- ${project.award}`;
 
     const description = document.createElement('p');
     description.className = 'project-description';
