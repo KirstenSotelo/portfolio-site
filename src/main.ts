@@ -12,7 +12,8 @@ interface PortfolioData {
   }>;
   projects: Array<{
     name: string;
-    award: string;
+    award: 'Winner' | 'Runner-up';
+    event: string;
     url: string;
     description: string;
   }>;
@@ -51,25 +52,29 @@ const portfolioData: PortfolioData = {
   projects: [
     {
       name: "Orpheus",
-      award: "Google Showcase Winner",
+      award: "Winner",
+      event: "Google Showcase",
       url: "https://github.com/JulianCruzet/Orpheus",
       description: "multi-platform agentic e-commerce store management platform"
     },
     {
       name: "Whispr",
-      award: "Hackathon Winner",
+      award: "Winner",
+      event: "LarpHacks 2026",
       url: "https://github.com/JulianCruzet/whispr",
       description: "iphone improv game that whispers real-time conversation cues through your headphones"
     },
     {
       name: "TradeLens",
-      award: "Hackathon Winner",
+      award: "Winner",
+      event: "Sanofi × Snowflake",
       url: "https://www.linkedin.com/posts/maxence-donio-b20184120_just-wrapped-the-sanofi-x-snowflake-ai-hackathon-ugcPost-7465456899753377792-qqav/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ84wUBuIC2UQZmGFetR9bhXyxsc8EEk9M",
       description: "snowflake agentic platform for admin workflows"
     },
     {
       name: "Immunis",
-      award: "Hack The North Runner-up",
+      award: "Runner-up",
+      event: "Hack The North",
       url: "https://github.com/KirstenSotelo/Immunis",
       description: "cybersecurity system for real-time threat detection and mitigation"
     }
@@ -148,15 +153,34 @@ function createProjectsSection(projectItems: PortfolioData['projects']): HTMLEle
     item.target = '_blank';
     item.rel = 'noopener noreferrer';
 
+    const heading = document.createElement('div');
+    heading.className = 'project-heading';
+
     const projectName = document.createElement('h3');
     projectName.className = 'project-link';
-    projectName.textContent = `${project.name} -- ${project.award}`;
+    projectName.textContent = project.name;
+
+    const awardTag = document.createElement('span');
+    awardTag.className = `project-award ${project.award === 'Winner' ? 'project-award-winner' : 'project-award-runner-up'}`;
+
+    const award = document.createElement('span');
+    award.className = 'project-award-label';
+    award.textContent = project.award;
+
+    const event = document.createElement('span');
+    event.className = 'project-event';
+    event.textContent = project.event;
+
+    awardTag.appendChild(award);
+    awardTag.appendChild(event);
+    heading.appendChild(projectName);
+    heading.appendChild(awardTag);
 
     const description = document.createElement('p');
     description.className = 'project-description';
     description.textContent = project.description;
 
-    item.appendChild(projectName);
+    item.appendChild(heading);
     item.appendChild(description);
     section.appendChild(item);
   });

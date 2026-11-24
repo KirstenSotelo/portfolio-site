@@ -508,13 +508,56 @@ body {
     opacity: 1;
 }
 
+.project-heading {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+}
+
+.project-award {
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 7px;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.project-award-label {
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+.project-award-winner {
+    color: #e6c66e;
+}
+
+.project-award-runner-up {
+    color: #c4b5fd;
+}
+
+.project-event {
+    color: #a3a0aa;
+}
+
+.project-event::before {
+    content: '·';
+    margin-right: 7px;
+    color: #716d79;
+}
+
 .project-link {
     font-size: 16px;
     font-weight: 600;
     color: #ffffff;
     text-decoration: none;
     display: inline-block;
-    margin-bottom: 4px;
+    margin-bottom: 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 1;
