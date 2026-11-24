@@ -65,13 +65,6 @@ const portfolioData: PortfolioData = {
       description: "iphone improv game that whispers real-time conversation cues through your headphones"
     },
     {
-      name: "TradeLens",
-      award: "Winner",
-      event: "Sanofi × Snowflake",
-      url: "https://www.linkedin.com/posts/maxence-donio-b20184120_just-wrapped-the-sanofi-x-snowflake-ai-hackathon-ugcPost-7465456899753377792-qqav/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ84wUBuIC2UQZmGFetR9bhXyxsc8EEk9M",
-      description: "snowflake agentic platform for admin workflows"
-    },
-    {
       name: "Immunis",
       award: "Runner-up",
       event: "Hack The North",
