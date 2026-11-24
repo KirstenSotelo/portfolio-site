@@ -62,7 +62,7 @@ const portfolioData: PortfolioData = {
       award: "Winner",
       event: "LarpHacks 2026",
       url: "https://github.com/JulianCruzet/whispr",
-      description: "iphone improv game that whispers real-time conversation cues through your headphones"
+      description: "ai earpiece that whispers what to say in real time"
     },
     {
       name: "Immunis",
